@@ -1,0 +1,6 @@
+# Exclude the Hugo output folder
+/public/
+
+# Optional: Exclude local Hugo build caches
+/resources/_gen/
+/.DS_Store
