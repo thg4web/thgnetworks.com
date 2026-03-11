@@ -230,7 +230,7 @@
     /* ── FEATURE CARDS ── */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 1.2rem;
       max-width: 780px;
       width: 100%;
@@ -266,6 +266,76 @@
       line-height: 1.65;
       color: var(--dim);
     }
+
+    /* ── INFO BOX ── */
+    .info-box {
+      margin: 1.6rem auto 0;
+      max-width: 580px;
+      border: 1px solid rgba(201,168,76,0.25);
+      background: rgba(201,168,76,0.05);
+      padding: 1.2rem 1.6rem;
+      text-align: left;
+      opacity: 0;
+      animation: fadeIn 1s ease 1.25s both;
+    }
+    .info-box-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .info-box-text {
+      font-size: 0.85rem;
+      line-height: 1.75;
+      color: var(--dim);
+    }
+    .info-box-text strong { color: var(--text); font-weight: 400; }
+    .info-box-text em { color: var(--gold-glow); font-style: normal; }
+
+    /* ── HOW IT WORKS ── */
+    .how-it-works {
+      max-width: 780px;
+      width: 100%;
+      margin-top: 2.5rem;
+      opacity: 0;
+      animation: fadeIn 1s ease 2s both;
+    }
+    .hiw-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 1.4rem;
+    }
+    .hiw-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+    .hiw-step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .hiw-num {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: rgba(201,168,76,0.3);
+      line-height: 1;
+      flex-shrink: 0;
+      padding-top: 0.15rem;
+    }
+    .hiw-text {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: var(--dim);
+    }
+    .hiw-text strong { color: var(--text); font-weight: 400; }
 
     /* ── FOOTER ── */
     footer {
@@ -351,12 +421,23 @@
     <h1>Messier Marathon<span class="accent">Observer's Log</span></h1>
     <div class="divider"></div>
     <p class="description">
-      Track your journey through Charles Messier's iconic catalog of 110 deep-sky objects.
-      Log galaxies, nebulae, star clusters, and more as you race the night sky in a single evening.
+      Track your journey through Charles Messier's iconic catalog of 110 deep-sky objects —
+      galaxies, nebulae, and star clusters — as you race the night sky in a single evening.
     </p>
+
+    <div class="info-box">
+      <p class="info-box-title">What is a Messier Marathon?</p>
+      <p class="info-box-text">
+        A <strong>Messier Marathon</strong> is a challenge to observe all 110 objects in Charles Messier's
+        18th-century catalog in a single night. The ideal window is a <em>moonless night in mid-March</em>,
+        when all objects are briefly visible from the Northern Hemisphere. It's one of amateur astronomy's
+        most beloved traditions — from beginners to seasoned observers.
+      </p>
+    </div>
+
     <p class="description" style="margin-top:0.8rem">
-      Whether you're a seasoned observer or taking your first look through an eyepiece,
-      MMOL keeps your observations organized, dated, and ready to revisit.
+      Whether you're attempting your first marathon or logging a lifetime of sessions,
+      MMOL keeps your observations organized, timestamped, and ready to revisit.
     </p>
 
     <div class="stats">
@@ -369,8 +450,12 @@
         <div class="stat-label">Night to Log Them</div>
       </div>
       <div class="stat">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Clear Skies Ahead</div>
+        <div class="stat-num">~8h</div>
+        <div class="stat-label">Observing Window</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Mar</div>
+        <div class="stat-label">Best Month</div>
       </div>
     </div>
 
@@ -387,17 +472,40 @@
     <div class="feature-card">
       <div class="feature-icon">🔭</div>
       <div class="feature-title">Log Observations</div>
-      <div class="feature-desc">Record each object you spot with date, time, conditions, and personal notes.</div>
+      <div class="feature-desc">Record each object with date, time, seeing conditions, equipment used, and personal notes.</div>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🌌</div>
       <div class="feature-title">Full Catalog</div>
-      <div class="feature-desc">All 110 Messier objects — galaxies, nebulae, clusters — in one place.</div>
+      <div class="feature-desc">All 110 Messier objects — galaxies, nebulae, clusters — with type, constellation, and magnitude data.</div>
     </div>
     <div class="feature-card">
       <div class="feature-icon">📅</div>
       <div class="feature-title">Marathon Ready</div>
-      <div class="feature-desc">Built for the annual Messier Marathon — observe all 110 in a single night.</div>
+      <div class="feature-desc">Built for the annual Messier Marathon — track your progress as you sweep the sky in a single night.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📄</div>
+      <div class="feature-title">Export to PDF</div>
+      <div class="feature-desc">Save your observation log as a formatted PDF — ready to submit for the <em style="color:var(--gold-glow);font-style:normal;">Astronomical League Messier Club</em> certificate challenge.</div>
+    </div>
+  </div>
+
+  <div class="how-it-works">
+    <div class="hiw-title">How It Works</div>
+    <div class="hiw-steps">
+      <div class="hiw-step">
+        <div class="hiw-num">01</div>
+        <div class="hiw-text"><strong>Pick a clear night</strong> — ideally a new moon in mid-March for the full marathon experience.</div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">02</div>
+        <div class="hiw-text"><strong>Open the Log</strong> — browse the full Messier catalog sorted by visibility window throughout the night.</div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">03</div>
+        <div class="hiw-text"><strong>Record each find</strong> — mark objects as observed, add notes, and export your log as a <em style="color:var(--gold-glow);font-style:normal;">PDF</em> for the Astronomical League Messier Club challenge.</div>
+      </div>
     </div>
   </div>
 </main>
