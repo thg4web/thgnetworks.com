@@ -1,4 +1,4 @@
 # Optional: Exclude local Hugo build caches
-start_webserver.sh
+/start_webserver.sh
 /resources/_gen/
 /.DS_Store
